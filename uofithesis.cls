@@ -142,8 +142,8 @@
         \end{center}%
         \begin{flushleft}
             {\@committeetitle\par}
-
-            \begin{itemize}[label={}, left-margin=0.5in]
+            \setlength{\leftmargini}{0.5in}
+            \begin{itemize}[label={}]
                     \setlength{\itemsep}{0pt}
                     \setlength{\parskip}{0pt}
                     \setlength{\parsep}{0pt}
