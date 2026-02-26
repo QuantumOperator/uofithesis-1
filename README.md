@@ -106,6 +106,30 @@ By default, the class produces a dissertation. For a master's thesis:
 \documentclass[thesis]{uofithesis}
 ```
 
+## TeXstudio
+
+**TeXstudio** must be configured to use latexmk and LuaLaTeX to build the document properly:
+
+1. Go to Options -> Configure TeXstudio
+2. Under "Commands" find "Latexmk" near the bottom. Remove the "-pdf" flag which is forcing it to not use lualatex:
+   `latexmk -silent -synctex=1 %`
+3. Under "Build", change Default Compiler to "Latexmk"
+
+The document should then compile.
+
+This repository includes a TeXstudio completion word list (CWL) for the
+class-specific macros defined by `uofithesis.cls`.
+
+CWL file: `texstudio/uofithesis.cwl`
+
+This is not required for the template to work, but it provides autocompletion
+for the custom macros. To use it, copy the `uofithesis.cwl` file to your TeXstudio user completion directory:
+
+- Windows: `%APPDATA%\texstudio\completion\user\`
+- macOS/Linux: `~/.config/texstudio/completion/user/`
+
+After copying the file, restart TeXstudio.
+
 ## Package Groups and Accessibility
 
 > [!WARNING]
