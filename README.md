@@ -290,6 +290,14 @@ Here's a sample for how to include a chemical structure with `chemfig`:
 
 At this time, all [float environments must be wrapped in `Part`](#wrap-floats-in-part-tags) tags to ensure they are read in the correct order by screen readers.
 
+### Source Code Listings
+
+The `listings` package will not compile with tagging enabled.
+
+`minted` is an alternative that can be used. It requires Python 3.13 or earlier to be installed.
+
+See [Issue #5](https://github.com/graduatecollege/uofithesis/issues/5) for discussion on this.
+
 ### Other Utilities
 
 - **csquotes**: Proper quotation handling (recommended with babel)
