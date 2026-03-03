@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
-\ProvidesClass{uofithesis}[2026/02/26 v1.1 University of Illinois Graduate College Dissertation/Thesis Class]
+\ProvidesClass{uofithesis}[2026/03/03 v1.2 University of Illinois Graduate College Dissertation/Thesis Class]
 
 \LoadClass[letterpaper,12pt,oneside]{article}
 
