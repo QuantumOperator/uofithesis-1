@@ -3,6 +3,28 @@
 **Breaking changes** will be highlighted in each version, if there are any.
 Breaking change would mean a change is needed in the `.tex` file to accommodate the changes in the document class.
 
+## v1.2 - 2026-03-03
+
+Use the `pdfusetitle` option with `hyperref` instead of `hypersetup` for PDF metadata.
+
+To update your document, remove `hypersetup:
+
+```diff
+-\AtBeginDocument{
+-    \hypersetup{
+-        pdftitle={\@title},
+-        pdfauthor={\@author}
+-    }
+-}
+```
+
+And add the `pdfusetitle` option to the `hyperref` package:
+
+```diff
+-\usepackage[hidelinks]{hyperref}
++\usepackage[hidelinks,pdfusetitle]{hyperref}
+```
+
 ## v1.1 - 2026-02-26
 
 ### Other Changes

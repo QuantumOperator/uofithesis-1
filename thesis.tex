@@ -34,7 +34,7 @@
 
 % Bibliography for references
 % biber must be set as the backend, style can be changed as needed
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
 \usepackage[backend=biber,style=ieee]{biblatex}
 \usepackage[bottom]{footmisc}
 
@@ -73,13 +73,6 @@
 \item Assistant Professor Charlie Clarke
 \item Professor Dan Drower
 \item Professor Eve Earlsfield
-}
-
-\AtBeginDocument{
-    \hypersetup{
-        pdftitle={\@title},
-        pdfauthor={\@author}
-    }
 }
 
 \begin{document}
