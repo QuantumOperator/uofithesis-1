@@ -11,6 +11,20 @@ A LaTeX document class for University of Illinois Urbana-Champaign dissertations
 > If you want to update the template, the [changelog](./CHANGELOG.md) will list all
 > necessary changes to your document.
 
+## In This README
+
+- [Using This Template](#using-this-template)
+- [Requirements](#requirements)
+- [Building Your Document](#building-your-document)
+- [Document Structure](#document-structure)
+- [TeXstudio](#texstudio)
+- [Package Groups and Accessibility](#package-groups-and-accessibility)
+- [Accessibility Best Practices](#accessibility-best-practices)
+- [Document Metadata](#document-metadata)
+- [Customization](#customization)
+- [File Organization](#file-organization)
+- [Troubleshooting](#troubleshooting)
+
 ## Using This Template
 
 ### Overleaf
@@ -183,6 +197,8 @@ The Tagging Project is still under active development, and some features may be 
 - MathML generation for screen reader compatibility
 - Unicode math symbols for proper character encoding
 - Modern OpenType math fonts
+- Most other packages, such as amsmath, **are not compatible** and will not produce
+  accessible math.
 
 All equations should be wrapped in appropriate tags:
 
@@ -278,6 +294,22 @@ For tables with header columns:
 \tagpdfsetup{table/header-columns={1},table/header-rows={1}}
 ```
 
+#### Advanced Tables
+
+Using colors and merged cells in tables are challenging for accessibility. If you
+must use these features, note the following:
+
+**If you need merged cells**, use `array` and `multirow`
+for the best results. They tag merged cells correctly. **Does not support colored cells.**
+[multirow example](https://github.com/graduatecollege/uofithesis/issues/6#issuecomment-4057268158)
+
+**If you need colored cells**, use `nicematrix` with the `\CodeBefore` option to 
+apply colors. This tags merged cells as nested tables, which is problematic,
+but is the only option that allows colored cells while still being read in a 
+somewhat logical order by screen readers. [nicematrix example](https://github.com/graduatecollege/uofithesis/issues/6#issuecomment-4041274456)
+
+`tabularray` is **not** compatible and doesn't produce usable tables.
+
 ### Bibliography (`biblatex` + `biber`)
 
 **Biber backend is required**.:
@@ -322,6 +354,11 @@ The `listings` package will not compile with tagging enabled.
 
 See [Issue #5](https://github.com/graduatecollege/uofithesis/issues/5) for discussion on this.
 
+### Algorithms and Pseudocode
+
+The `algorithm` and `algpseudocode` packages are compatible with tagging and can 
+be used for algorithms and pseudocode. [algpseudocode example](https://github.com/graduatecollege/uofithesis/issues/8#issuecomment-4057284694)
+
 ### Other Utilities
 
 - **csquotes**: Proper quotation handling (recommended with babel)
@@ -343,6 +380,10 @@ Use LaTeX's sectioning commands rather than manual formatting:
 {\large\bfseries Manual Heading}
 ```
 
+The PDF output will have a `<Title>` tag for the document title, and `<H1>` tags 
+for top-level sections. This is consistent with PDF UA-2, and it is practically
+impossible to make LaTeX Tagging do anything else.
+
 > [!NOTE]
 > The `uofithesis` class uses the `report` document class as its base,
 > which uses `\section` rather than `\chapter` for top-level sections. This is
@@ -361,7 +402,8 @@ Wrap figures and tables in Part tags:
 \tagstructend
 ```
 
-Without this, all of the figures and tables will be read after the main text, which is confusing for assistive technology.
+Without this, all of the figures and tables will be read after the main text, 
+which is very confusing for assistive technology.
 
 ### Provide Meaningful Alt Text
 
@@ -426,13 +468,18 @@ Use `\input{chapters/chapter1.tex}` or similar to include chapter files.
 
 ### Build Errors
 
-**Error: "Undefined control sequence \DocumentMetadata"**
+#### Error: "Undefined control sequence \DocumentMetadata"
 - Update to TeX Live 2025 or later
 - Older versions don't support PDF/UA-2 tagging
 
-**Strange build errors after adding a package**
+#### Strange build errors after adding a package
 - Check the [Tagging Status of LaTeX Packages](https://latex3.github.io/tagging-project/tagging-status/) to ensure compatibility
 - Incompatible packages can fail for reasons not immediately obvious when used with tagging
+
+#### Errors and warnings in Overleaf
+
+Enabling [Overleaf Labs](https://www.overleaf.com/labs/participate) to get access 
+to the Rolling Release can reduce build issues related to the tagging system.
 
 ### Known Adobe Acrobat Accessibility Issues
 
