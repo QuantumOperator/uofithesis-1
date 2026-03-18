@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
-\ProvidesClass{uofithesis}[2026/03/17 v1.3 University of Illinois Graduate College Dissertation/Thesis Class]
+\ProvidesClass{uofithesis}[2026/03/18 v1.4 University of Illinois Graduate College Dissertation/Thesis Class]
 
 \LoadClass[letterpaper,12pt,oneside]{article}
 
@@ -186,3 +186,34 @@
 \AtBeginDocument{\setcounter{tocdepth}{2}}
 \renewcommand*{\l@section}{\@dottedtocline{1}{1.5em}{5em}}
 \renewcommand*{\l@subsection}{\@dottedtocline{2}{3em}{2.5em}}
+
+\renewcommand*{\l@section}{\@dottedtocline{1}{1.5em}{5em}}
+\renewcommand*{\l@subsection}{\@dottedtocline{2}{3em}{2.5em}}
+
+% Appendix environment that resets numbering and uses A, B, C... 
+% instead of 1, 2, 3... for sections.
+\newcounter{appendix}
+\newenvironment{appendices}{%
+    \setcounter{appendix}{0}%
+    \renewcommand{\thesection}{Appendix \Alph{appendix}}%
+    \renewcommand{\thesubsection}{\Alph{appendix}.\arabic{subsection}}%
+    \renewcommand{\section}[1]{%
+        \refstepcounter{appendix}%
+        \setcounter{subsection}{0}%
+        \clearpage%
+        \phantomsection%
+        \addcontentsline{toc}{section}{Appendix \Alph{appendix}: ##1}%
+        \begin{center}%
+            {\normalfont\bfseries\fontsize{12pt}{14.4pt}\selectfont
+            Appendix \Alph{appendix}: ##1\par}%
+        \end{center}%
+        \vspace{12pt}%
+    }%
+}{%
+    \renewcommand{\thesection}{Chapter \arabic{section}}%
+    \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}%
+    \renewcommand{\section}{\@startsection{section}{1}{\z@}%
+        {-3.5ex \@plus -1ex \@minus -.2ex}%
+        {2.3ex \@plus.2ex}%
+    {\normalfont\bfseries\fontsize{12pt}{14.4pt}\selectfont\centering}}%
+}
