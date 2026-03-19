@@ -194,23 +194,34 @@ The Tagging Project is still under active development, and some features may be 
 ### Mathematics (`unicode-math`)
 
 **Required for accessible mathematics.** This package enables:
+
 - MathML generation for screen reader compatibility
 - Unicode math symbols for proper character encoding
 - Modern OpenType math fonts
-- Most other packages, such as amsmath, **are not compatible** and will not produce
-  accessible math.
+- Provides `amsmath` features with better accessibility support
 
-All equations should be wrapped in appropriate tags:
+> [!WARNING]
+> Many packages often used with `amsmath` are not compatible with `unicode-math`,
+> so always check the [Tagging Status of LaTeX Packages](https://latex3.github.io/tagging-project/tagging-status/)
+> before including a package in your document.
+
+`align`, `equation`, `gather`, `split`, `multline` and other `amsmath` environments 
+are all supported and will be tagged properly. Since they are not floats,
+they do not need to be wrapped in `Part` tags:
 
 ```latex
-\tagstructbegin{tag=Part}
-\begin{equation}\label{eq:example}
-    E = mc^2
-\end{equation}
-\tagstructend
+Some body text.
+
+\begin{align}
+    E &= mc^2 \\
+    F &= ma
+\end{align}
+
+Some more text...
 ```
 
-At this time, all [float environments must be wrapped in `Part`](#wrap-floats-in-part-tags) tags to ensure they are read in the correct order by screen readers.
+If using float, all [float environments must be wrapped in `Part`](#wrap-floats-in-part-tags) 
+tags to ensure they are read in the correct order by screen readers.
 
 ### Graphics and Visualization
 
