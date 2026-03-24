@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
-\ProvidesClass{uofithesis}[2026/03/18 v1.4 University of Illinois Graduate College Dissertation/Thesis Class]
+\ProvidesClass{uofithesis}[2026/03/24 v1.5 University of Illinois Graduate College Dissertation/Thesis Class]
 
 \LoadClass[letterpaper,12pt,oneside]{article}
 
@@ -172,6 +172,19 @@
     \vspace{12pt}
     \doublespacing
 }{%
+}
+
+% Dedication environment
+\newenvironment{dedication}{%
+    \clearpage
+    \thispagestyle{plain}
+    \vspace*{\fill}
+    \begin{center}
+    \itshape
+}{%
+    \end{center}
+    \vspace*{\fill}
+    \clearpage
 }
 
 % Adjust ToC line height

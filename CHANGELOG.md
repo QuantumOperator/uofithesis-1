@@ -3,6 +3,20 @@
 **Breaking changes** will be highlighted in each version, if there are any.
 Breaking change would mean a change is needed in the `.tex` file to accommodate the changes in the document class.
 
+## v1.5 - 2026-03-24
+
+Added the `\dedication` environment for better handling of the dedication section.
+To update an existing document to include a dedication, add the following
+after your `\acknowledgements` if using that, or otherwise after the `\abstract` section:
+
+```latex
+% dedication uses begin and end syntax because it opens a center environment
+% which needs to be closed
+\begin{dedication}
+    A dedication is optional.
+\end{dedication}
+```
+
 ## v1.4 - 2026-03-18
 
 ### Breaking Changes

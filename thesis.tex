@@ -14,6 +14,7 @@
 \documentclass{uofithesis}
 % \documentclass[thesis]{uofithesis} % for a thesis
 
+% fontsetup can slow down compilation, so you may wish to omit it when writing
 \usepackage{fontsetup}
 
 % If using math unicode-math is required for math accessibility.
@@ -98,6 +99,12 @@
     acknowledgment and the \texttt{\textbackslash acknowledgements} command
     from your \texttt{.tex} file.
 }
+
+% dedication uses begin and end syntax because it opens a center environment
+% which needs to be closed
+\begin{dedication}
+    A dedication is optional.
+\end{dedication}
 
 \tableofcontents
 
