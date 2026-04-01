@@ -1,0 +1,66 @@
+%!TEX root = ../thesis.tex
+
+\section{Coffee Charts}
+
+Data visualization is an important aspect of understanding coffee consumption
+patterns and production statistics. The following chart displays typical daily
+coffee consumption at different times.
+
+\tagstructbegin{tag=Part}
+\begin{figure}[H]
+    \begin{tikzpicture}[alt={Bar chart showing a marked increase in coffee
+        consumption during deposit week with a steep decline after deposit}]
+        \begin{axis}[
+                width=0.9\textwidth,
+                height=3in,
+                ybar,
+                cycle list name=StrictAA,
+                every axis plot/.append style={fill, draw=black},
+                nodes near coords style={text=black, font=\small},
+                enlargelimits=0.15,
+                ylabel={Avg. Cups per Day},
+                symbolic x coords={Weekday, Weekend, Deposit Week, Post-Deposit},
+                xtick=data,
+                nodes near coords,
+                nodes near coords align={vertical},
+                bar width=20pt
+            ]
+            \addplot+ coordinates {(Weekday,2.1) (Weekend,1.4) (Deposit Week,4.6) (Post-Deposit,0.3)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average Daily Coffee Consumption By Period}
+    \medskip
+    \label{fig:coffee_consumption_chart}
+\end{figure}
+\tagstructend
+\bigskip
+
+The following line chart illustrates the trend of coffee consumption throughout
+a week. There is a noticeable increase in consumption during the middle of the
+week, peaking on Thursday and Friday, followed by a decline over the weekend.
+
+\tagstructbegin{tag=Part}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[alt={Line chart showing the trend of coffee consumption
+        throughout the week, with a peak on Thursday and Friday}]
+        \begin{axis}[
+                width=0.9\textwidth,
+                height=5cm,
+                xlabel={Day of Week},
+                ylabel={Cups Consumed},
+                legend style={at={(0.5,-0.15)},
+                anchor=north,legend columns=-1},
+                grid=major,
+                xtick={1,2,3,4,5,6,7},
+                xticklabels={Mon, Tue, Wed, Thu, Fri, Sat, Sun},
+            ]
+            \addplot[mark=*] coordinates {(1,2.4) (2,2.6) (3,2.8) (4,3.2) (5,3.5) (6,1.8) (7,1.2)};
+            \legend{Daily Intake}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Coffee Consumption Trend Throughout the Week}
+    \medskip
+    \label{fig:coffee_trend_chart}
+\end{figure}
+\tagstructend
