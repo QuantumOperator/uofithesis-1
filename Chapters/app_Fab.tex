@@ -1,0 +1,138 @@
+\section{Fabrication}
+
+All of the devices reported in this thesis were nominally made using the following recipe. The recipe was developed from a recipe developed in the Javad Shabani group at NYU.
+
+
+\begin{enumerate}
+    \item \textbf{Dice}
+        \begin{enumerate}
+            \item Spin AZ1815 photoresist at 3000rpm for 30s. 
+            \item Bake for 2 min at 110$\degree$C
+            \item Dice using Advanced Dicing Technologies (ADT) 7112 Wafer Dicer with Ni blade (ADT 00757-4240-890-200) at 10 krpm and 1mm/s cut rotation and speed, respectively.
+            \item Standard solvent clean
+            \begin{enumerate}
+                \item Soak in NMP for 30 mins at 80\degree C.
+                \item Soak in Acetone for 1 min.
+                \item Soak in IPA for 1 min.
+                \item Dry using \ce{N2} gun
+                
+            \end{enumerate}
+            
+        \end{enumerate}
+    \item \textbf{Shallow trench etch} This step defines the width of the junction, the RF SQUID loop, alignment markers, and the gap of the gate line.
+        \begin{enumerate}
+            \item Spin PMMA 950 A4 at 4000 rpm (at 1000 rpm/s ramp up) for 60s.
+            \item Bake at 180\degree C for 120 s.
+            \item Expose in Raith EBPG 5150 with 20nA beam current and nominally 700 $\mu C/cm^2 $
+            \item Develop in  1:3, DI water:IPA solution at 5\degree for 2 min. Dry using a \ce{N2} gun.
+            \item Bake 80\degree C for 5 min. Helps prevent peeling during acid etch.
+            \item Al acid etch:
+            \begin{enumerate}
+                \item Place beaker of Transene Aluminium Etchant Type D in water bath on hot plate and set temperature to 50\degree C. The water temperature should end up being between 29-32 \degree C
+                \item Dip sample in etchant until color of large features changes. Wait an additional 3 seconds.
+                \item Triple rinse in DI water and blow dry with \ce{N2} gun.
+            \end{enumerate}
+            \item Dip sample in Dilute Phosphoric Peroxide\footnote{I had very consistent etch results ordering this mixture from Transene} (DPP, Phosphoric acid(85\%): Hydrogen Peroxide(30\%): DI water in a volume ratio of 1:1:40) for 2 mins. Etches ~200nm of substrate.
+            \item Triple rinse in DI water and blow dry with \ce{N2} gun.
+            \item Dip sample back in Transene Aluminium Etchant Type D for about 5 seconds. This removes the overhung Al from the undercutting DPP etch.
+            \item Triple rinse in DI water and blow dry with \ce{N2} gun.
+            \item Standard solvent clean
+            \begin{enumerate}
+                \item Soak in NMP for 30 mins at 80\degree C.
+                \item Soak in Acetone for 1 min.
+                \item Soak in IPA for 1 min.
+                \item Dry using \ce{N2} gun
+                
+            \end{enumerate}
+            
+        \end{enumerate}
+    \item \textbf{Deep Trench Etch} This step defines the microwave components like the resonator, and feedline.
+    \begin{enumerate}
+        \item Spin AZ 1518 photo-resist at 4000 rpm (1000 rpm/s ramp up) for 90s.
+        \item Bake at 100\degree C for 50 s.
+        \item Expose in Heidelberg MLA 150 with 375 nm light at $65mJ/cm^2 $
+        \item Develop in AZ 917 MIF for 85 s. Rinse with DI water and dry using a \ce{N2} gun.
+        \item Al acid etch (If TMAH in developer didn't fully etch Al):
+        \begin{enumerate}
+            \item Place beaker of Transene Aluminium Etchant Type D in water bath on hot plate and set temperature to 50\degree C. The water temperature should end up being between 29-32 \degree C
+            \item Dip sample in etchant until color of large features changes. Wait an additional 3 seconds.
+            \item Triple rinse in DI water and blow dry with \ce{N2} gun.
+        \end{enumerate}
+        \item Dip in DPP for 5 min. Nominally etches ~500 nm into substrate.
+        \item Triple rinse in DI water and blow dry with \ce{N2} gun.
+        \item Standard solvent clean
+        \begin{enumerate}
+            \item Soak in NMP for 30 mins at 80\degree C.
+            \item Soak in Acetone for 1 min.
+            \item Soak in IPA for 1 min.
+            \item Dry using \ce{N2} gun
+        \end{enumerate}
+    \end{enumerate}
+    \item \textbf{Aluminum junction etch} This step defines the length of the junction.
+    \begin{enumerate}
+        \item Spin PMMA 950 A4 at 4000 rpm (at 1000 rpm/s ramp up) for 60 s.
+        \item Bake at 180\degree C for 120 s.
+        \item Expose in Raith EBPG 5150 with 20 nA beam current and nominally 700 $\mu C/cm^2 $
+        \item Develop in  1:3, DI water:IPA solution at 5\degree for 2 min. Dry using a \ce{N2} gun.
+        \item Bake 80\degree C for 5 min. Helps prevent peeling during acid etch.
+        \item Al acid etch:
+        \begin{enumerate}
+            \item Place beaker of Transene Aluminium Etchant Type D in water bath on hot plate and set temperature to 50\degree C. The water temperature should end up being between 29-32 \degree C
+            \item Dip sample in etchant until color of large features changes. Wait an additional 3 seconds.
+            \item Triple rinse in DI water and blow dry with \ce{N2} gun.
+        \end{enumerate}
+        \item Standard solvent clean
+        \begin{enumerate}
+            \item Soak in NMP for 30 mins at 80\degree C.
+            \item Soak in Acetone for 1 min.
+            \item Soak in IPA for 1 min.
+            \item Dry using \ce{N2} gun
+        \end{enumerate}
+    \end{enumerate}
+    \item \textbf{\ce{HfO2} Dielectric (Lifted off)} This defines the dielectric to isolate gate from junction or RF SQUID in a defined area.
+    \begin{enumerate}
+        \item Spin PMMA 950 A4 at 4000 rpm (at 1000 rpm/s ramp up) for 60 s.
+        \item Bake at 180\degree C for 120 s.
+        \item Expose in Raith EBPG 5150 with 20 nA beam current and nominally 700 $\mu C/cm^2 $
+        \item Develop in  1:3, DI water:IPA solution at 5\degree for 2 min. Dry using a \ce{N2} gun.
+        \item Atomic layer deposition in Savannah S100 Atomic Layer Deposition Cambridge Nanotech.
+        \begin{enumerate}
+            \item Flow \ce{N2} at 20 sscm. Chamber temp is set to 120$\degree$C.
+            \item Repeat the following for 300 cycles:
+            \begin{enumerate}
+                \item Pulse water valve for 0.1 s
+                \item Wait 40 s.
+                \item Pulse Hf precursor for 0.3 s.
+                \item Wait 40 s.
+            \end{enumerate}
+        \end{enumerate}
+        \item Solvent liftoff
+        \begin{enumerate}
+            \item Soak in NMP for 120 mins at 80\degree C.
+            \item Sonnicate for 1 min in NMP.
+            \item Soak in Acetone for 1 min.
+            \item Soak in IPA for 1 min.
+            \item Dry using \ce{N2} gun
+        \end{enumerate}
+    \end{enumerate}
+    \item \textbf{Gate liftoff} This defines the gate.
+    \begin{enumerate}
+        \item Spin MMA EL13 at 4000 rpm (at 1000 rpm/s ramp up) for 60 s.
+        \item Bake at 180\degree C for 120 s.
+        \item Spin PMMA 950 A4 at 4000 rpm (at 1000 rpm/s ramp up) for 60 s.
+        \item Bake at 180\degree C for 120 s.
+        \item Expose in Raith EBPG 5150 with 20 nA beam current and nominally 700 $\mu C/cm^2 $
+        \item Develop in  1:3, DI water:IPA solution at 5\degree for 2 min. Dry using a \ce{N2} gun.
+        \item Sputter about 230 nm Nb at 0.8 nm/s and 6 mTorr Ar pressure.
+        \item Solvent liftoff:
+        \begin{enumerate}
+            \item Soak in NMP for 120 mins at 80\degree C.
+            \item While sample is still submerged in NMP. Spray to remove any film remaining on surface.
+            \item Soak in Acetone for 1 min.
+            \item Soak in IPA for 1 min.
+            \item Dry using \ce{N2} gun
+        \end{enumerate}
+    \end{enumerate}
+    
+\end{enumerate}
+

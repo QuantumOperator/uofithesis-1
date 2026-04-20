@@ -34,7 +34,7 @@
 \usepackage{pgfplots}
 
 \usepackage{csquotes}
-
+\usepackage{gensymb} %added by me, not in the template
 % Bibliography for references
 % biber must be set as the backend, style can be changed as needed
 \usepackage[hidelinks,pdfusetitle]{hyperref}
@@ -43,7 +43,7 @@
 
 % At time of writing, chemistry packages are not compatible with accessibility
 % tagging, but there are no alternatives.
-% \usepackage[version=4]{mhchem}
+\usepackage[version=4]{mhchem}
 % \usepackage{chemfig}
 % \pgfplotsset{compat=1.18}
 
@@ -80,7 +80,6 @@
 \includeonly{Chapter/Introduction}
 \begin{document}
 
-
 % Uncomment the copyrightpage macro to include an automatic copyright page
 % before the title
 %\copyrightpage
@@ -109,9 +108,10 @@
 
 \tableofcontents
 
-\input{Chapters/Introduction}
-\input{Chapters/Theory}
-\input{Chapters/ABS_spec}
+% \input{Chapters/Introduction}
+% \input{Chapters/Theory}
+\input{Chapters/Methods}
+% \input{Chapters/ABS_spec}
 
 
 
@@ -119,7 +119,7 @@
 % \printbibliography[heading=bibintoc,title={References}]
 
 \appendices{
-    \input{Chapters/appendix_1}
+    % \input{Chapters/app_Fab}
 
 }
 \end{document}
